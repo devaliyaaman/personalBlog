@@ -1,0 +1,34 @@
+<%- include("./partials/header") %>
+    <div class="home">
+        <h1>Welcome !!!</h1>
+        <p>
+            <%= content %>
+        </p>
+        <p> Programming is an intriguing sector as it gives us the superpower to regulate computer programs on the go.
+            It
+            can
+            be used for ships, traffic control, robotics, self-driving vehicles, smartphone applications, websites, and
+            many
+            other things.
+        </p>
+        <p> To ensure that you remain up to date on standards and protocols, and even more so in the field of coding, it
+            is
+            important to track developments in your field. Programmers of all specialties can easily benefit from
+            keeping
+            track of the new developments & following industry-leading blogs and websites.<a href="/compose">Compose</a>
+        </p>
+        <hr>
+
+        <% blogs.forEach(function(blog){ %>
+            <h1>
+                <%= blog.title %>
+            </h1>
+            <p>
+                <%= blog.post.substring(1,120) + "..." %>
+                    <a href="/blogs/<%= blog.title %>">Read More</a>
+            </p>
+            <hr>
+
+            <% }) %>
+    </div>
+    <%- include("./partials/footer") %>
